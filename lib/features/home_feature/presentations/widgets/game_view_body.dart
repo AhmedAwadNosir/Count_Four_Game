@@ -14,6 +14,9 @@ class GameViewBody extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
+            Color(0xff4554F1),
+            Color(0xffE544EC),
+            Color(0xff4554F1),
             Color(0xffE544EC),
             Color(0xff4554F1),
           ],

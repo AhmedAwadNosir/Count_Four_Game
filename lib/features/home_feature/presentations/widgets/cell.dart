@@ -5,7 +5,7 @@ enum cellMode {
   Empty,
   Yellow,
   RED,
-}
+} // this for check states of cell
 
 class Cell extends StatelessWidget {
   const Cell({
@@ -13,8 +13,9 @@ class Cell extends StatelessWidget {
     @required this.currentCellMode,
   });
 
-  final currentCellMode;
+  final currentCellMode; // given us mode of coin acording to it integer value in the list
   Coin _buildCoin() {
+    //this for building coin acording to cell currunt state
     switch (this.currentCellMode) {
       case cellMode.Yellow:
         return Coin(coinColor: Colors.yellow);

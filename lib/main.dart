@@ -24,7 +24,7 @@ class CountFourApp extends StatelessWidget {
                 const HomeView()), //Note name of every page must start with "/"
         GetPage(
             name: "/gameview",
-            page: () => const Gameview(),
+            page: () => Gameview(),
             binding: MainBindings()), // bindings for conect controler with page
       ],
       initialRoute: "/homeview",
