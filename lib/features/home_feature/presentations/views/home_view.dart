@@ -1,10 +1,10 @@
 import 'package:count_four/core/utils/app_images.dart';
 import 'package:count_four/features/home_feature/presentations/views/game_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
-  static const id = "HomeView";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +41,7 @@ class HomeView extends StatelessWidget {
                 height: 75,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, Gameview.id);
+                      Get.toNamed("/gameview");
                     },
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xff3D41DD)),

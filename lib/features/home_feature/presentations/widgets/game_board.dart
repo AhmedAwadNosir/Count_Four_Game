@@ -1,10 +1,20 @@
 import 'package:count_four/features/home_feature/presentations/widgets/board_column.dart';
+import 'package:count_four/features/home_feature/states_manager/controler/game_controler.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class GameBoard extends StatelessWidget {
-  const GameBoard({
+  GameBoard({
     super.key,
   });
+
+  final GameControler gameControler =
+      Get.find<GameControler>(); // for use game controler
+  List<BoardColumn> _buildBoard() {
+    return gameControler.board
+        .map((boardcolumn) => BoardColumn(columnOfPlayerChips: boardcolumn))
+        .toList(); // for getting board columns
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +38,23 @@ class GameBoard extends StatelessWidget {
                   offset: const Offset(0, 3),
                 )
               ]),
-          child: const Column(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  BoardColumn(),
-                  BoardColumn(),
-                  BoardColumn(),
-                  BoardColumn(),
-                  BoardColumn(),
-                  BoardColumn(),
-                  BoardColumn(),
-                ],
-              ),
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: _buildBoard()
+                  // [
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  //   BoardColumn(),
+                  // ],
+                  ),
             ],
           ),
         ),

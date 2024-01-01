@@ -19,7 +19,7 @@ class GameViewBody extends StatelessWidget {
           ],
         ),
       ),
-      child: const GameBoard(),
+      child: GameBoard(),
     );
   }
 }
