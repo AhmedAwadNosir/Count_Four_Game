@@ -13,7 +13,7 @@ class GameControler extends GetxController {
     board = [
       List.filled(6,
           0), // this is list of integer for every column in game board set value of each cell to 0
-      List.filled(6, 0),
+      [1, 1, 0, 0, 0, 0],
       List.filled(6, 0),
       List.filled(6, 0),
       List.filled(6, 0),

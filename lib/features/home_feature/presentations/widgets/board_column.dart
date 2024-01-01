@@ -12,7 +12,13 @@ class BoardColumn extends StatelessWidget {
   final GameControler gameControler = Get.find<GameControler>();
   final List<int> columnOfPlayerChips;
   List<Cell> _buildBoardColumn() {
-    return columnOfPlayerChips.map((number) => Cell()).toList();
+    return columnOfPlayerChips.reversed
+        .map((number) => number == 1
+            ? const Cell(currentCellMode: cellMode.Yellow)
+            : number == 2
+                ? const Cell(currentCellMode: cellMode.RED)
+                : const Cell(currentCellMode: cellMode.Empty))
+        .toList();
   }
 
   @override
